@@ -1,0 +1,68 @@
+@font-face {
+  font-family: 'NotoSerif';
+  src: url('../fonts/NotoSerif_Condensed-bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NotoSerif';
+  src: url('../fonts/NotoSerif_Condensed-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+    margin: 0 auto 50px;
+    padding: 25px;
+    background-color: rgba(222, 247, 255, 0.7);
+    position: relative;
+    text-align: left;
+    font-family: 'NotoSerif', 'Times', 'serif';
+    font-size: 22px;
+    letter-spacing: .15rem;
+    color: rgba(0, 0, 0);
+}
+
+h1, h2 {
+    color: rgba(0, 0, 0);
+    margin-top: 0;
+    margin-bottom: 20px;
+    background: rgba(159, 249, 255, 0.9);
+    padding: 10px 0;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 35px;
+    letter-spacing: 0.5rem;
+}
+
+p {
+  color: rgba(0, 0, 0);
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.back-button {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: .2s;
+  background-size: 200% auto;
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(159, 249, 255, 0.9);
+  box-shadow: 0 0 20px #61616173;
+  border-radius: 10px;
+  transition: all .3s ease-in-out;
+}
+
+.back-button:hover {
+  box-shadow: inset 0 0 5px #61616173;
+  background-color: rgba(222, 247, 255, 0.9);
+}

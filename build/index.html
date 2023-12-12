@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Enjoy a captivating match-three puzzle game with challenging levels, vibrant graphics, and strategic gameplay. Play now!">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="manifest" href="./manifest.json">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <title>Fruits Rush. Match 3 Game</title>
+    <script type="text/javascript" src="./pixi.js"></script>
+</head>
+
+<body class="body">
+    <div class="no-event"></div>
+    <div class="modal" id="modal">
+        <!-- 
+        <div class="game-title">
+            Fruits Rush. Match 3 Game
+        </div>
+ -->
+        <div class="time-list_box">
+            <p class="time-list__text">
+                Choose a round time:
+            </p>
+            <ul class="time-list">
+                <li class="time-list__item timer_item" id="threeMin">3:00</li>
+                <li class="time-list__item timer_item" id="fiveMin">5:00</li>
+                <li class="time-list__item timer_item" id="tenMin">10:00</li>
+            </ul>
+        </div>
+        <div class="privacy-box">
+            <a href="./about.html">About Game</a>
+            <a href="./policy-privacy.html">Privacy Policy</a>
+        </div>
+        <div class="best-score">
+            <p>Best Score: <span id="best-score">0</span></p>
+            <!-- <p>Time: <span id="score-time">0</span></p> -->
+        </div>
+    </div>
+
+    <div class="score-box">Your Score: <span id="score-res">0</span></div>
+    <div class="time-box">Time: <span id="timer">00:00</span></div>
+    <div id="canvasContainer">
+    </div>
+    <!-- <div class="menu-btn active" id="burger-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div> -->
+    <div class="finish-game_modal">
+        <h3 class="finish-game_title">Finish Game</h3>
+        <div class="finish-game__score-item">
+            <p class="score-item__three">Your best result in 3 minutes: <span
+                    class="score-item__three-text score-item__text">0</span></p>
+        </div>
+        <div class="finish-game__score-item">
+            <p class="score-item__five">Your best result in 5 minutes: <span
+                    class="score-item__five-text score-item__text">0</span></p>
+        </div>
+        <div class="finish-game__score-item">
+            <p class="score-item__ten">Your best result in 10 minutes: <span
+                    class="score-item__ten-text score-item__text">0</span></p>
+        </div>
+        <button class="finish-game_btn">Back to menu</button>
+    </div>
+    <script type="text/javascript" src="./build.js"></script>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            let bestScore = document.querySelector('#best-score');
+            var storedData = localStorage.getItem('my_three_game');
+            
+            if (storedData) {
+                var parsedData = JSON.parse(storedData);
+                let scores = [];
+                for (let key in parsedData) {
+                    if (parsedData.hasOwnProperty(key)) {
+                        scores.push(parsedData[key].score);
+                    }
+                }
+                if (scores.length > 0) {
+                    let maxScore = Math.max(...scores);
+                    bestScore.textContent = maxScore;
+                } else bestScore.textContent = '0'
+            } else {
+                return
+            }
+        });
+
+
+    </script>
+
+
+
+</body>
+
+</html>
